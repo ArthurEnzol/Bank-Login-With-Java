@@ -78,25 +78,6 @@ public class Main {
 
                 }
 
-                if (quantityDigitsOfAccountNumber == 8) {
-                    boolean numberAccountExist = false;
-
-                    for (int number: AccountBank.listNumbersAccounts) {
-
-                        if (number == accountNumber) {
-                            numberAccountExist = true;
-                            numberAccount = number;
-                            break;
-                        }
-
-                    }
-
-                    if (numberAccountExist == true) {
-                        int indexNameToNumberAccount = AccountBank.listNumbersAccounts.indexOf(numberAccount);
-                        System.out.println("You name is: " + AccountBank.listNamesAccounts.indexOf(indexNameToNumberAccount + "? "));
-                    }
-
-                }
             }
             else {
 
