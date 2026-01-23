@@ -1,0 +1,56 @@
+# Bank Login System
+
+## Descrição
+
+Sistema de simulação bancária em **Java** que permite verificar contas existentes ou cadastrar novos usuários. O projeto foca em **lógica de listas dinâmicas** e **fluxo de controle**.
+
+## Funcionalidades Principais
+
+### Login de Usuário
+
+* Verifica se o **número da conta** existe na base de dados.
+
+### Cadastro Automático
+
+* Gera um **número único** para novos usuários.
+
+### Simulação de Delay
+
+* Uso de `Thread.sleep` para simular o carregamento do sistema.
+
+## Regras de Negócio e Dados
+
+### Gerenciamento de Contas
+
+* **listNamesAccounts**: armazena os nomes vinculados às contas.
+* **listNumbersAccounts**: armazena os IDs numéricos das contas.
+* **Busca por índice**: o sistema localiza o índice do número da conta e utiliza a mesma posição para encontrar o nome do titular.
+
+### Validação de Entrada
+
+* Uso de `do-while` para garantir que o usuário digite apenas **Y** ou **N**.
+* O método `toUpperCase()` trata entradas em letras minúsculas.
+
+## Estrutura do Código
+
+* **application.Main**: classe principal com o loop de execução.
+* **entities.AccountBank**: classe responsável pelo gerenciamento das listas de dados.
+* **entities.GenerateNumberAccount**: classe responsável pela geração dos IDs das contas.
+
+## Como Rodar o Projeto
+
+### Compilação
+
+```bash
+javac application/Main.java entities/*.java
+```
+
+### Execução
+
+```bash
+java application.Main
+```
+
+## Tratamento de Exceções
+
+* Uso de **try-catch** para evitar que o programa trave em caso de erro na geração da conta ou interrupção do sistema.
