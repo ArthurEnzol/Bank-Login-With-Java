@@ -2,6 +2,7 @@ package application;
 
 import entities.AccountBank;
 import java.util.Scanner;
+import entities.GenerateNumberAccount;
 
 public class Main {
 
@@ -40,7 +41,7 @@ public class Main {
 
             } while (!resp.equals("Y") && !resp.equals("N"));
 
-            int numberAccount = 0;
+            int numberAccount =0;
 
             switch (resp) {
                 case "Y":
@@ -58,13 +59,15 @@ public class Main {
                 int accountNumber = sc.nextInt();
                 int quantityDigitsOfAccountNumber = String.valueOf(accountNumber).length();
 
-                if (AccountBank.listNumbersAccounts.contains(numberAccount)) {
+                if (AccountBank.listNumbersAccounts.contains(accountNumber)) {
 
                     int indexNameAccount = AccountBank.listNumbersAccounts.indexOf(numberAccount);
-                    String nameAccount = AccountBank.listNamesAccounts.get(indexNameAccount);
+                    int numberAccountGenereted = AccountBank.listNumbersAccounts.get(indexNameAccount+1);
+                    String nameAccount = AccountBank.listNamesAccounts.get(indexNameAccount+1);
+
                     System.out.println("Account find: ");
-                    System.out.printf("Number Account: ", numberAccount);
-                    System.out.printf("Name: ", nameAccount);
+                    System.out.printf("Number Account: %d%n", numberAccountGenereted);
+                    System.out.printf("Name: %s%n", nameAccount);
 
                 }
                 else {
@@ -96,20 +99,25 @@ public class Main {
                 }
             }
             else {
+
                 System.out.println("Follow the step-by-step guide to create an account: ");
-                System.out.println("Write your first name: ");
+                System.out.print("Write your first name: ");
                 String firstName = sc.next();
                 System.out.println("Loading...");
+
                 try {
                     Thread.sleep(3500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
                 try {
+
+                    int numberAccountGenerated = GenerateNumberAccount.generateNumberAccount();
                     AccountBank.listNamesAccounts.add(firstName);
-                    AccountBank.listNumbersAccounts.add(numberAccount);
+                    AccountBank.listNumbersAccounts.add(numberAccountGenerated);
                     System.out.println("Account saved with success.");
-                    System.out.printf("Save your account number: %d" + numberAccount);
+                    System.out.printf("Save your account number: %d%n", numberAccountGenerated);
 
                 } catch (Exception e) {
                     System.out.printf("Ops, an error has occurred: %s", e);
