@@ -35,10 +35,7 @@ public class AccountBank {
         this.sale = sale;
     }
 
-    public void generateNumberAccount(){;
-        final int numberAccount = (int) (Math.random() * 10000000);
-        this.numberAccount = numberAccount;
-    }
+
 
 
 
