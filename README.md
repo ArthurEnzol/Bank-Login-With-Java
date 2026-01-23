@@ -4,6 +4,9 @@
 
 Sistema de simulação bancária em **Java** que permite verificar contas existentes ou cadastrar novos usuários. O projeto foca em **lógica de listas dinâmicas** e **fluxo de controle**.
 
+## ****EM DESENVOLVIMENTO****
+* **util.Verifiers**: classe responsável pelas verificações
+
 ## Funcionalidades Principais
 
 ### Login de Usuário
@@ -37,7 +40,50 @@ Sistema de simulação bancária em **Java** que permite verificar contas existe
 * **entities.AccountBank**: classe responsável pelo gerenciamento das listas de dados.
 * **entities.GenerateNumberAccount**: classe responsável pela geração dos IDs das contas.
 
+
+## Tratamento de Exceções
+
+* Uso de **try-catch** para evitar que o programa trave em caso de erro na geração da conta ou interrupção do sistema.
+
 ## Como Rodar o Projeto
+
+### Windows
+
+* Abra a pasta **BankLogin** e rode:
+
+```bash
+cd src/application
+```
+
+* Depois execute:
+
+```bash
+java application.Main
+```
+
+### Linux
+
+* Abra o terminal na pasta **BankLogin** e rode:
+
+```bash
+cd src/application
+```
+
+* Compile os arquivos:
+
+```bash
+javac application/Main.java entities/*.java
+```
+
+* Execute o programa:
+
+```bash
+java application.Main
+```
+
+### OBS
+
+* Garanta que você tenha a **JDK instalada** na sua máquina.
 
 ### Compilação
 
@@ -48,9 +94,6 @@ javac application/Main.java entities/*.java
 ### Execução
 
 ```bash
-java application.Main
+java Main.java
 ```
 
-## Tratamento de Exceções
-
-* Uso de **try-catch** para evitar que o programa trave em caso de erro na geração da conta ou interrupção do sistema.
