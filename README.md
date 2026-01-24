@@ -5,7 +5,7 @@
 Sistema de simulação bancária em **Java** que permite verificar contas existentes ou cadastrar novos usuários. O projeto foca em **lógica de listas dinâmicas** e **fluxo de controle**.
 
 ## ****EM DESENVOLVIMENTO****
-* **util.Verifiers**: classe responsável pelas verificações
+* **asda**: classe responsável pelas verificações
 
 ## Funcionalidades Principais
 
