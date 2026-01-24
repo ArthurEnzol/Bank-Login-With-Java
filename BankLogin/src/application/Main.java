@@ -3,54 +3,23 @@ package application;
 import entities.AccountBank;
 import java.util.Scanner;
 import entities.GenerateNumberAccount;
+import util.Verifiers.HaveAccount;
 
 public class Main {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        boolean haveAccount = false;
+        boolean haveAccount;
         int exit = 1;
         String resp;
         AccountBank accountBank = null;
 
         do {
 
-            do {
-
-                System.out.print("You have a account? [Y/N] ");
-                resp = sc.next().toUpperCase();
-
-                if (resp.equals("Y") || resp.equals("N")) {
-
-                    switch (resp) {
-                        case "Y":
-                            haveAccount = true;
-                            break;
-                        case "N":
-                            haveAccount = false;
-                            break;
-                    }
-
-                }
-                else {
-                    System.out.println("Write just Y or N. ");
-                    System.out.println();
-                }
+            haveAccount = HaveAccount.haveAccount(sc);
 
 
-            } while (!resp.equals("Y") && !resp.equals("N"));
-
-            int numberAccount =0;
-
-            switch (resp) {
-                case "Y":
-                    haveAccount = true;
-                    break;
-                case "N":
-                    haveAccount = false;
-                    break;
-            }
 
             if (haveAccount) {
                 System.out.println("Press enter for login. ");
@@ -61,7 +30,7 @@ public class Main {
 
                 if (AccountBank.listNumbersAccounts.contains(accountNumber)) {
 
-                    int indexNameAccount = AccountBank.listNumbersAccounts.indexOf(numberAccount);
+                    int indexNameAccount = AccountBank.listNumbersAccounts.indexOf(accountNumber);
                     int numberAccountGenereted = AccountBank.listNumbersAccounts.get(indexNameAccount+1);
                     String nameAccount = AccountBank.listNamesAccounts.get(indexNameAccount+1);
 
