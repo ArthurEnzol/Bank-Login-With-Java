@@ -1,4 +1,4 @@
-package util.Verifiers;
+package util;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -8,10 +8,10 @@ public class HaveAccount {
 
     public static boolean haveAccount(Scanner sc) {
 
-        StatusErrors statusErrors = StatusErrors.SUCCESS;
+        StatusErrors statusErrors = StatusErrors.ERROR;
         String resp;
 
-        do {
+        while (statusErrors == StatusErrors.ERROR) {
 
             try {
 
@@ -41,9 +41,8 @@ public class HaveAccount {
 
             }
 
-        } while (true);
+        }
 
         return false;
-
     }
 }
