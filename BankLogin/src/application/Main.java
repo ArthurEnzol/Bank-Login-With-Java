@@ -1,8 +1,6 @@
 package application;
 
-import entities.AccountBank;
 import java.util.Scanner;
-import entities.GenerateNumberAccount;
 import util.CreateAccount;
 import util.verifiers.HaveAccount;
 import util.LoginAccount;
