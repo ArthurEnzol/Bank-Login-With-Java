@@ -1,4 +1,4 @@
-package util;
+package util.verifiers;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
